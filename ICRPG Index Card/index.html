@@ -1,0 +1,136 @@
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
+
+<input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character'  />
+<div class="character">
+  <div class="main">
+    <input class="txt_name" type="text" name="attr_character_name" placeholder="Name">
+    <input class="txt_story" type="text" name="attr_story" placeholder="Story">
+  </div>
+  
+  <div class="attributes">
+    <button class="attribute_btn btn_str" type='roll' value='&{template:default} {{name=Strength Check}} {{Strength=[[1d20+@{str}]]}}' name='roll_strCheck'>STR</button>
+    <button class="attribute_btn btn_dex" type='roll' value='&{template:default} {{name=Dexterity Check}} {{Dexterity=[[1d20+@{dex}]]}}' name='roll_dexCheck'>DEX</button>
+    <button class="attribute_btn btn_con" type='roll' value='&{template:default} {{name=Constitution Check}} {{Constitution=[[1d20+@{con}]]}}' name='roll_conCheck'>CON</button>
+    <button class="attribute_btn btn_int" type='roll' value='&{template:default} {{name=Intelligence Check}} {{Intelligence=[[1d20+@{int}]]}}' name='roll_intCheck'>INT</button>
+    <button class="attribute_btn btn_wis" type='roll' value='&{template:default} {{name=Wisdom Check}} {{Wisdom=[[1d20+@{wis}]]}}' name='roll_wisCheck'>WIS</button>
+    <button class="attribute_btn btn_cha" type='roll' value='&{template:default} {{name=Charisma Check}} {{Charisma=[[1d20+@{cha}]]}}' name='roll_chaCheck'>CHA</button>
+    
+    <input class="attribute a_txt txt_str" type="number" name="attr_str" value="0">
+    <input class="attribute a_txt txt_dex" type="number" name="attr_dex" value="0">
+    <input class="attribute a_txt txt_con" type="number" name="attr_con" value="0">
+    <input class="attribute a_txt txt_int" type="number" name="attr_int" value="0">
+    <input class="attribute a_txt txt_wis" type="number" name="attr_wis" value="0">
+    <input class="attribute a_txt txt_cha" type="number" name="attr_cha" value="0">
+    
+    <button type="roll" value='&{template:default} {{name=Modified Strength Check}} {{Strength=[[1d20+@{str_loot}]]}}' name='roll_strCheckModified' class="attribute a_loot txt_str_loot"><span name="attr_str_loot"></span></button>
+    <button type="roll" value='&{template:default} {{name=Modified Dexterity Check}} {{Dexterity=[[1d20+@{dex_loot}]]}}' name='roll_dexCheckModified' class="attribute a_loot txt_dex_loot"><span name="attr_dex_loot"></span></button>
+    <button type="roll" value='&{template:default} {{name=Modified Constitution Check}} {{Constitution=[[1d20+@{con_loot}]]}}' name='roll_conCheckModified' class="attribute a_loot txt_con_loot"><span name="attr_con_loot"></span></button>
+    <button type="roll" value='&{template:default} {{name=Modified Intelligence Check}} {{Intelligence=[[1d20+@{int_loot}]]}}' name='roll_intCheckModified' class="attribute a_loot txt_int_loot"><span name="attr_int_loot"></span></button>
+    <button type="roll" value='&{template:default} {{name=Modified Wisdom Check}} {{Wisdom=[[1d20+@{wis_loot}]]}}' name='roll_wisCheckModified' class="attribute a_loot txt_wis_loot"><span name="attr_wis_loot"></span></button>
+    <button type="roll" value='&{template:default} {{name=Modified Charisma Check}} {{Charisma=[[1d20+@{cha_loot}]]}}' name='roll_chaCheckModified' class="attribute a_loot txt_cha_loot"><span name="attr_cha_loot"></span></button>
+  </div>
+
+  <div class="arms_n_effort">
+    <input type="hidden" name="attr_armor" value="10">
+    <input class="base_effort txt_armor_loot" type="number" name="attr_armor_loot" value="0" readonly="readonly">
+
+    <input class="base_effort txt_basic" type="number" name="attr_basic" value="0">
+    <input class="base_effort txt_weapon" type="number" name="attr_weapon" value="0">
+    <input class="base_effort txt_magic" type="number" name="attr_magic" value="0">
+    <input class="base_effort txt_ultimate" type="number" name="attr_ultimate" value="0">
+
+    <button type="roll" value="&{template:default} {{name=Modified Basic Effort}} {{Effort=[[1d4+@{basic_loot}]]}}" class="loot_effort txt_basic_loot" type="number" name="roll_basicCheckModified"><span name="attr_basic_loot"></span></button>
+    <button type="roll" value="&{template:default} {{name=Modified Weapon Effort}} {{Effort=[[1d6+@{weapon_loot}]]}}" class="loot_effort txt_weapon_loot" type="number" name="roll_weaponCheckModified"><span name="attr_weapon_loot"></span></button>
+    <button type="roll" value="&{template:default} {{name=Modified Magic Effort}} {{Effort=[[1d8+@{magic_loot}]]}}" class="loot_effort txt_magic_loot" type="number" name="roll_magicCheckModified"><span name="attr_magic_loot"></span></button>
+    <button type="roll" value="&{template:default} {{name=Modified Ultimate Effort}} {{Effort=[[1d12+@{ultimate_loot}]]}}" class="loot_effort txt_ultimate_loot" type="number" name="roll_ultimateCheckModified"><span name="attr_ultimate_loot"></span></button>
+
+  </div>
+
+  <div class="health">
+    <input class="txt_hp" type="number" name="attr_hp" value="10">
+    <input type='hidden' class='hearts' name='attr_hearts'  value='8'  />
+    <div class="heartbar"></div>
+  </div>
+  
+  <button class="btn_gear" type="action" name="act_gear">Gear</button>
+</div>
+
+<div class="gear">
+  
+  <div class="gear_list">
+    <fieldset class="repeating_gear"> 
+      <input type="checkbox" name="attr_equipped" value="1" />
+      <select name="attr_gearbonustype" class="gearbonustype gearinput"> 
+        <option value="">-</option>
+        <option value="armor">Armor</option>
+        <optgroup label="Attributes">
+          <option value="str">Strenth</option>
+          <option value="dex">Dexterity</option>
+          <option value="con">Constitution</option>
+          <option value="int">Intelligence</option>
+          <option value="wis">Wisdom</option>
+          <option value="cha">Charisma</option>
+        </optgroup>
+        <optgroup label="Effort">
+          <option value="basic">Basic</option>
+          <option value="weapon">Weapon</option>
+          <option value="magic">Magic</option>
+          <option value="ultimate">Ultimate</option>
+        </optgroup>
+      </select>
+      <input type="number" name="attr_gearbonus" class="gearbonus gearinput" /> 
+      <input type="text" name="attr_gearname" class="gearname gearinput" />
+    </fieldset>
+  </div>
+  
+  <button class="btn_character" type="action" name="act_character">Character</button>
+</div>
+
+
+<script type="text/worker">
+  const buttonlist = ["character","gear"];
+  buttonlist.forEach(button => {
+    on(`clicked:${button}`, function() {
+      setAttrs({
+        sheetTab: button
+      });
+    });
+  });
+  
+  const bonusTargets = ['str', 'dex', 'con', 'int', 'wis', 'cha', 'armor', 'basic', 'weapon', 'magic', 'ultimate'];
+  const fields = ['equipped', 'gearbonustype', 'gearbonus']
+  onchange = "sheet:opened removed:repeating_gear change:repeating_gear " + bonusTargets.map(t => `change:${t}`).join(" ");
+  on(onchange, function() {
+    getAttrs(bonusTargets, function(bases) {
+      getSectionIDs("gear", function(idArray) {
+        const attrArray = idArray.reduce( (m,id) => [...m, ...(fields.map(field => `repeating_gear_${id}_${field}`))],[]);
+        getAttrs(attrArray, v => {
+          bonuses = idArray.map(function(id) {
+            return {
+              equipped: v[`repeating_gear_${id}_equipped`],
+              bonus: v[`repeating_gear_${id}_gearbonus`],
+              type: v[`repeating_gear_${id}_gearbonustype`]
+            }
+          });
+          bonusTargets.forEach(b => bases[b] = parseInt(bases[b]));
+          console.log(bases);
+          bonuses.forEach(bonus => bases[bonus.type] += (bonus.equipped === "1" ? parseInt(bonus.bonus) : 0))
+          out = {}
+          bonusTargets.forEach(t => out[t + "_loot"] = bases[t])
+          console.log(out);
+          setAttrs(out);
+        })
+      });
+      
+    });
+  });
+
+  on('sheet:opened change:hp', function(eventInfo){
+    setAttrs({
+      hearts: Math.min(Math.ceil(parseInt(eventInfo.newValue)/10), 8)
+    })
+  });
+</script>

@@ -1,0 +1,302 @@
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+.charsheet{
+  height: 597px;
+  width: 362px;
+  background-repeat: no-repeat;
+  background-image: url(https://raw.githubusercontent.com/ringmaster/roll20-character-sheets/master/ICRPG Index Card/images/ICRPG_mini_bg1.png);
+  position: relative;
+}
+
+
+.sheet-character {
+  display: none;
+}
+.sheet-gear {
+  display: none;
+  background-image: url(https://raw.githubusercontent.com/ringmaster/roll20-character-sheets/master/ICRPG Index Card/images/ICRPG_mini_bg2.png);
+  margin: -10px;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value="character"] ~ div.sheet-character,
+.sheet-tabstoggle[value="gear"] ~ div.sheet-gear {
+  display: block;
+}
+
+.sheet-main input {
+  width: 271px;
+  border: none;
+  background: transparent;
+  position: absolute;
+  left: 60px;
+  font-family: 'Permanent Marker';
+  font-size: 25px;
+}
+
+.sheet-txt_name {
+  top: 20px;
+}
+.sheet-txt_story {
+  top: 66px;
+}
+.sheet-attribute_btn {
+  position: absolute;
+  left: 20px;
+  border: none;
+  background: transparent;
+  color: transparent;
+  width: 60px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 0 !important;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+.sheet-attribute_btn[type="roll"]::before {
+  content: "";
+}
+.sheet-btn_str {
+  top: 135px;
+}
+.sheet-btn_dex {
+  top: 170px;
+}
+.sheet-btn_con {
+  top: 205px;
+}
+.sheet-btn_int {
+  top: 240px;
+}
+.sheet-btn_wis {
+  top: 275px;
+}
+.sheet-btn_cha {
+  top: 310px;
+}
+
+.sheet-attributes .sheet-attribute[type="number"],
+.sheet-attributes button.sheet-attribute {
+  position: absolute;
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 25px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  font-family: "Permanent Marker";
+  text-align: center;
+  font-size: 1.5em;
+}
+.sheet-attributes button.sheet-attribute {
+  width: 30px;
+}
+.sheet-attributes button.sheet-attribute[type="roll"]::before {
+  content: "";
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.sheet-a_txt {
+  left: 110px
+}
+.sheet-txt_str {
+  top: 140px;
+}
+.sheet-txt_dex {
+  top: 173px;
+}
+.sheet-txt_con {
+  top: 208px;
+}
+.sheet-txt_int {
+  top: 243px;
+}
+.sheet-txt_wis {
+  top: 275px;
+}
+.sheet-txt_cha {
+  top: 310px;
+}
+
+.sheet-a_loot {
+  left: 150px
+}
+.sheet-txt_str_loot {
+  top: 140px;
+}
+.sheet-txt_dex_loot {
+  top: 173px;
+}
+.sheet-txt_con_loot {
+  top: 208px;
+}
+.sheet-txt_int_loot {
+  top: 243px;
+}
+.sheet-txt_wis_loot {
+  top: 275px;
+}
+.sheet-txt_cha_loot {
+  top: 310px;
+}
+
+
+.sheet-base_effort {
+  left: 235px;
+  position: absolute;
+  top: 185px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-family: Permanent Marker;
+  font-size: 1.3em;
+}
+.sheet-txt_armor_loot {
+  left: 255px;
+  top: 130px;
+}
+.sheet-txt_basic {
+  top: 188px;
+}
+.sheet-txt_weapon {
+  top: 225px;
+}
+.sheet-txt_magic {
+  top: 262px;
+}
+.sheet-txt_ultimate {
+  top: 299px;
+}
+
+button.sheet-loot_effort[type="roll"]::before{
+  content:"";
+}
+.sheet-loot_effort {
+  left: 300px;
+  position: absolute;
+  top: 185px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-family: Permanent Marker;
+  font-size: 1.3em;
+}
+.sheet-txt_basic_loot {
+  top: 193px;
+}
+.sheet-txt_weapon_loot {
+  top: 230px;
+}
+.sheet-txt_magic_loot {
+  top: 267px;
+}
+.sheet-txt_ultimate_loot {
+  top: 304px;
+}
+
+.sheet-health {
+  position: absolute;
+  left: 25px;
+  top: 380px;
+  background-image: url(http://ss.owenw.com/heart.png);
+}
+.sheet-txt_hp {
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-family: "Permanent Marker";
+  font-size: 1.3em;
+  background-image: url(http://ss.owenw.com/heart_circled.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  padding: 0;
+  width: 36px !important;
+  height: 30px !important;
+}
+.sheet-hearts[value="1"] ~ div.sheet-heartbar {
+  width: 37px;
+}
+.sheet-hearts[value="2"] ~ div.sheet-heartbar {
+  width: 74px;
+}
+.sheet-hearts[value="3"] ~ div.sheet-heartbar {
+  width: 111px;
+}
+.sheet-hearts[value="4"] ~ div.sheet-heartbar {
+  width: 149px;
+}
+.sheet-hearts[value="5"] ~ div.sheet-heartbar {
+  width: 186px;
+}
+.sheet-hearts[value="6"] ~ div.sheet-heartbar {
+  width: 223px;
+}
+.sheet-hearts[value="7"] ~ div.sheet-heartbar {
+  width: 260px;
+}
+.sheet-hearts[value="8"] ~ div.sheet-heartbar {
+  width: 297px;
+}
+
+
+.sheet-gear_list {
+  padding: 20px;
+}
+select.sheet-gearbonustype {
+  width: 60px;
+  font-size: 0.8em;
+}
+.sheet-gearbonus {
+  width: 2em;
+  text-align: center;
+}
+.sheet-gearname {
+  width: 170px;
+}
+.sheet-gearbonustype, 
+.sheet-gearbonus,
+.sheet-gearname {
+  border-bottom: 2px solid black;
+  border-bottom-width: 2px;
+  border-width: 0px 0px 2px;
+  border-radius: 0;
+  font-family: "Permanent Marker";
+  font-size: 1.3em;
+  height: 34px !important;
+}
+
+.sheet-btn_gear {
+  border: none;
+  position: absolute;
+  top: 545px;
+  left: 25px;
+  width: 110px;
+  height: 30px;
+  background: transparent;
+  font-size: 0;
+  padding: 0;
+}
+
+.sheet-btn_character {
+  border: none;
+  position: absolute;
+  top: 548px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  font-size: 0;
+  padding: 0;
+}
