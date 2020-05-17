@@ -208,7 +208,7 @@ button.sheet-loot_effort[type="roll"]::before{
   position: absolute;
   left: 25px;
   top: 380px;
-  background-image: url(http://ss.owenw.com/heart.png);
+  background-image: url(https://raw.githubusercontent.com/ringmaster/roll20-character-sheets/master/ICRPG Index Card/images/heart.png);
 }
 .sheet-txt_hp {
   text-align: center;
@@ -216,7 +216,7 @@ button.sheet-loot_effort[type="roll"]::before{
   border: none;
   font-family: "Permanent Marker";
   font-size: 1.3em;
-  background-image: url(http://ss.owenw.com/heart_circled.png);
+  background-image: url(https://raw.githubusercontent.com/ringmaster/roll20-character-sheets/master/ICRPG Index Card/images/heart_circled.png);
   background-repeat: no-repeat;
   background-position: center;
   color: white;
